@@ -159,7 +159,7 @@ class PlainTextReport implements IReport<PlainTextReport> {
     this.result = result;
     if (handler != null) handler(this);
     var exitCode = result.stats.isOk ? 0 : 1;
-#if (php || neko || cpp || cs || java || python || lua || eval || hl)
+#if (php || neko || cpp || cs || java || python || lua || eval || hl || go)
     Sys.exit(exitCode);
 #elseif js
     if(js.Syntax.code('typeof phantom != "undefined"'))
